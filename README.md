@@ -8,13 +8,19 @@ This repo contains the ESLint file and explanations for the rule choices within.
 
 ## Global
 <a name="env"></a><a name="1.1"></a>
-  - [1.1](#env) **env**: This object should contain only one property, **browser**. It should be set to true. This allows browser to be treated as a global variable.
-    > http://eslint.org/docs/user-guide/configuring#specifying-environments
-    ```json
+```json
     "env": {
         "browser": true
-    }
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "Ext": false,
+        "Atlas": false
+    },
+    "rules": {
     ```
+  - [1.1](#env) **env**: This object should contain only one property, **browser**. It should be set to true. This allows browser to be treated as a global variable.
+    > http://eslint.org/docs/user-guide/configuring#specifying-environments
   
   - [1.2](#extends) **extends**: Use this property to set eslint:recommended. This setting automatically includes a set of recommended rules that ESLint has predetermined.
     > http://eslint.org/docs/user-guide/configuring#extending-configuration-files
