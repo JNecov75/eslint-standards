@@ -8,7 +8,7 @@ This repo contains the ESLint file and explanations for the rule choices within.
 
 ## Global
 <a name="env"></a><a name="1.1"></a>
-  - [1.1](#env) **env**: This object should contain only one property, **browser**. It should be set to true.
+  - [1.1](#env) **env**: This object should contain only one property, **browser**. It should be set to true. This allows browser to be treated as a global variable.
     > http://eslint.org/docs/user-guide/configuring#specifying-environments
     ```json
     "env": {
@@ -18,6 +18,8 @@ This repo contains the ESLint file and explanations for the rule choices within.
   
   - [1.2](#extends) **extends**: Use this property to set eslint:recommended. This setting automatically includes a set of recommended rules that ESLint has predetermined.
     > http://eslint.org/docs/user-guide/configuring#extending-configuration-files
+    
+  - [1.3](#rules) **rules**: This final object at the top level of the JSOn configuration file exists to house all of the necessary ESLint rules not included in the ```json eslint:recommended``` property.
     
 ## Best Practices
 <a name="no--error"></a><a name="2.1"></a>
