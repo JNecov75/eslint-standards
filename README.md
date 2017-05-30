@@ -71,6 +71,44 @@ This repo contains the ESLint file and explanations for the rule choices within.
   
   - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
   
+  - [2.7](#default-case) **default-case**: Require Default Case in Switch Statements
+  
+  - [2.8](#dot-location) **dot-location**: Enforce newline before and after dot
+  
+  - [2.9](#dot-notation) **dot-notation**: Require Dot Notation
+  
+  - [2.10](#eqeqeq) **eqeqeq**: Require `===` and `!==`
+  
+  - [2.11](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.12](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
+  
 
 ## Variables
 
