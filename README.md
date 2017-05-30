@@ -8,7 +8,7 @@ This repo contains the ESLint file and explanations for the rule choices within.
 
 ## Global
 <a name="env"></a><a name="1.1"></a>
-```json
+  ```json
     "env": {
         "browser": true
     },
@@ -16,8 +16,7 @@ This repo contains the ESLint file and explanations for the rule choices within.
     "globals": {
         "Ext": false,
         "Atlas": false
-    },
-    "rules": {
+    }
     ```
   - [1.1](#env) **env**: This object should contain only one property, **browser**. It should be set to true. This allows browser to be treated as a global variable.
     > http://eslint.org/docs/user-guide/configuring#specifying-environments
