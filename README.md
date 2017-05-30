@@ -4,7 +4,7 @@ This repo contains the ESLint file and explanations for the rule choices within.
 ## Table of Contents
 1. [Global](#global)
 2. [Best Practices](#best-practices)
-5. [Complete Ruleset}(#complete-ruleset)
+5. [Complete Ruleset](#complete-ruleset)
 
 ## Global
 <a name="env"></a><a name="1.1"></a>
