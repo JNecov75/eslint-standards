@@ -7,7 +7,6 @@ This repo contains the ESLint file and explanations for the rule choices within.
 5. [Complete Ruleset](#complete-ruleset)
 
 ## Global
-<a name="env"></a><a name="1.1"></a>
   ```json
     "env": {
         "browser": true
@@ -28,33 +27,30 @@ This repo contains the ESLint file and explanations for the rule choices within.
   - [1.4](#rules) **rules**: This final object at the top level of the JSOn configuration file exists to house all of the necessary ESLint rules not included in the ```json eslint:recommended``` property.
     
 ## Best Practices
-<a name="no--error"></a><a name="2.1"></a>
-  - [2.1](#no--error) **NO-ERROR**: Use NO-ERROR only when you expect an error to occur, and if you use it, handle error appropriately
+  - [2.1](#accessor-pairs) **accessor-pairs**: Enforces getter/setter pairs in objects
 
-    > Why? NO-ERROR suppresses errors, which can cause database inconsistency issues, memory leaks, infinite loops and more...
+    > http://eslint.org/docs/rules/accessor-pairs 
+    It’s a common mistake in JavaScript to create an object with just a setter for a property but never have a corresponding getter defined for it. Without a getter, you cannot read the property, so it ends up not being used.
 
-    ```openedge
-    /* bad (error is suppressed, cMemberName is never assigned */
-    ASSIGN iMemberNumber = INTEGER("ABC")
-           cMemberName   = 'ABC' NO-ERROR.
-        
-    /* good (ver 1) - using structured error handling */
-    ASSIGN iMemberNumber = INTEGER("ABC")
-           cMemberName   = 'ABC'.
-    /* ... some code... */
-    CATCH eExc AS Progress.Lang.ProError:
-      MESSAGE "Error:" + eExc:GetMessage(1).
-    END.
-        
-    /* good (ver 2) - classic error handling (split safe assignment from unsafe) */
-    ASSIGN cMemberName   = 'ABC'.
-    ASSIGN iMemberNumber = INTEGER("ABC") NO-ERROR.
-    IF ERROR-STATUS:ERROR THEN DO:
-        /* handle error here */
-    END.
+    ```js
+    // Bad
+    var o = {
+        set a(value) {
+            this.val = value;
+        }
+    };
+
+    // Good
+    var o = {
+        set a(value) {
+            this.val = value;
+        },
+        get a() {
+            return this.val;
+        }
+    };
     ```
     
-<a name="no--error"></a><a name="2.2"></a>
   - [2.2](#routine-level) **BLOCK-LEVEL THROW** Always use BLOCK-LEVEL ON ERROR UNDO, THROW statement
 
     > Why? It changes the default ON ERROR directive to UNDO, THROW for all blocks (from default UNDO, LEAVE or UNDO, RETRY)
