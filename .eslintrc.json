@@ -4,7 +4,6 @@
     },
     "extends": "eslint:recommended",
     "rules": {
-        //Best Practices Section
         "accessor-pairs": "error",
         "array-callback-return": "error",
         "block-scoped-var": "error",
@@ -62,13 +61,11 @@
         "vars-on-top": "error",
         "strict": "error",
 
-        //Variables Section
         "no-catch-shadow": "error",
         "no-shadow": "error",
         "no-shadow-restricted-names": "error",
         "no-use-before-define": "error",
 
-        //Stylistic Issues Section
         "array-bracket-spacing": [
             "error",
             "always", {
@@ -96,7 +93,7 @@
         "indent": [
             "error",
             2, {
-                "SwitchCase": 1 //true
+                "SwitchCase": 1
             }
         ],
         "key-spacing": "error",
