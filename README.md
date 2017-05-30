@@ -9,7 +9,16 @@ This repo contains the ESLint file and explanations for the rule choices within.
 ## Global
 <a name="env"></a><a name="1.1"></a>
   - [1.1](#env) **env**: This object should contain only one property, **browser**. It should be set to true.
-    > "browser": true 
+    > http://eslint.org/docs/user-guide/configuring#specifying-environments
+    ```json
+    "env": {
+        "browser": true
+    }
+    ```
+  
+  - [1.2](#extends) **extends**: Use this property to set eslint:recommended. This setting automatically includes a set of recommended rules that ESLint has predetermined.
+    > http://eslint.org/docs/user-guide/configuring#extending-configuration-files
+    
 ## Best Practices
 <a name="no--error"></a><a name="2.1"></a>
   - [2.1](#no--error) **NO-ERROR**: Use NO-ERROR only when you expect an error to occur, and if you use it, handle error appropriately
