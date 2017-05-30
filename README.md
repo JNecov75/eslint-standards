@@ -57,14 +57,19 @@ This repo contains the ESLint file and explanations for the rule choices within.
     > `Array` has several methods for filtering, mapping, and folding. If we forget to write `return` statement in a callback of those, it’s probably a mistake.
     
   - [2.3](#block-scoped-var) **block-scoped-var**: Treat var as Block Scoped
+  
   - [2.4](#complexity) **complexity**: Limit Cyclomatic Complexity
     > Cyclomatic complexity measures the number of linearly independent paths through a program’s source code. This rule allows setting a cyclomatic complexity threshold.
-  ```js
-  "complexity": [
-    "error",
-    15
-  ],
-  ```
+    ```js
+    "complexity": [
+      "error",
+      15
+    ],
+    ```
+    
+  - [2.5](#consistent-return) **consistent-return**: require `return` statements to either always or never specify values
+  
+  - [2.6](#curly) **curly**: Require Following Curly Brace Conventions
   
 
 ## Variables
