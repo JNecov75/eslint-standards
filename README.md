@@ -107,8 +107,7 @@ This repo contains the ESLint file and explanations for the rule choices within.
     ```
 ## Complete Ruleset
 <a name="complete-ruleset"></a><a name="5.1"></a>
-'''json
-//ruleset json
+```json
   {
       "env": {
           "browser": true
@@ -288,4 +287,4 @@ This repo contains the ESLint file and explanations for the rule choices within.
           "Atlas": false
       }
   }
-  '''
+  ```
