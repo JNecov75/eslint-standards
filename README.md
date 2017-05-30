@@ -33,7 +33,7 @@ This repo contains the ESLint file and explanations for the rule choices within.
     > http://eslint.org/docs/rules/accessor-pairs 
     It’s a common mistake in JavaScript to create an object with just a setter for a property but never have a corresponding getter defined for it. Without a getter, you cannot read the property, so it ends up not being used.
 
-    `js
+    ```js
     // Bad
     var o = {
         set a(value) {
@@ -50,12 +50,22 @@ This repo contains the ESLint file and explanations for the rule choices within.
             return this.val;
         }
     };
-    `
+    ```
     
   - [2.2](#array-callback-return) **array-callback-return**: Enforces return statements in callbacks of array’s methods
   
     > `Array` has several methods for filtering, mapping, and folding. If we forget to write `return` statement in a callback of those, it’s probably a mistake.
-
+    
+  - [2.3](#block-scoped-var) **block-scoped-var**: Treat var as Block Scoped
+  - [2.4](#complexity) **complexity**: Limit Cyclomatic Complexity
+    > Cyclomatic complexity measures the number of linearly independent paths through a program’s source code. This rule allows setting a cyclomatic complexity threshold.
+  ```js
+  "complexity": [
+    "error",
+    15
+  ],
+  ```
+  
 
 ## Variables
 
