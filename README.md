@@ -106,6 +106,7 @@ This repo contains the ESLint file and explanations for the rule choices within.
     END.
     ```
 ## Complete Ruleset
+<a name="complete-ruleset"></a><a name="5.1"></a>
 {
     "env": {
         "browser": true
