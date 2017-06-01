@@ -93,7 +93,7 @@ This repo contains the ESLint file and explanations for the rule choices within.
     ```js
     function doIf() {
       if (true) {
-          var build = true;
+        var build = true;
       }
 
       console.log(build);
@@ -101,19 +101,20 @@ This repo contains the ESLint file and explanations for the rule choices within.
 
     function doIfElse() {
       if (true) {
-          var build = true;
+        var build = true;
       } else {
-          var build = false;
+        var build = false;
       }
     }
 
     function doTryCatch() {
       try {
-          var build = 1;
+        var build = 1;
       } catch (e) {
-          var f = build;
+        var f = build;
       }
     }
+    ```
   - [2.4](#complexity) **complexity**: Limit Cyclomatic Complexity
     > Cyclomatic complexity measures the number of linearly independent paths through a program’s source code. This rule allows setting a cyclomatic complexity threshold.
     ```js
