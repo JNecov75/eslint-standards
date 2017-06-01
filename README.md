@@ -51,10 +51,49 @@ This repo contains the ESLint file and explanations for the rule choices within.
     ```
     
   - [2.2](#array-callback-return) <a href="http://eslint.org/docs/rules/array-callback-return">**array-callback-return**</a>: Enforces return statements in callbacks of array’s methods
-  
     > `Array` has several methods for filtering, mapping, and folding. If we forget to write `return` statement in a callback of those, it’s probably a mistake.
+    > Incorrect code for this rule:
+    ```js
+    /*eslint array-callback-return: "error"*/
+
+    var indexMap = myArray.reduce(function(memo, item, index) {
+        memo[item] = index;
+    }, {});
+
+    var foo = Array.from(nodes, function(node) {
+        if (node.tagName === "DIV") {
+            return true;
+        }
+    });
+
+    var bar = foo.filter(function(x) {
+        if (x) {
+            return true;
+        } else {
+            return;
+        }
+    });
+    ```
+    > Correct code for this rule:
+    ```js
+    /*eslint array-callback-return: "error"*/
+
+    var indexMap = myArray.reduce(function(memo, item, index) {
+        memo[item] = index;
+        return memo;
+    }, {});
+
+    var foo = Array.from(nodes, function(node) {
+        if (node.tagName === "DIV") {
+            return true;
+        }
+        return false;
+    });
+
+    var bar = foo.map(node => node.getAttribute("id"));
+    ```
     
-  - [2.3](#block-scoped-var) <a href="http://eslint.org/docs/rules/block-scoped-var">**block-scoped-var**: Treat var as Block Scoped
+  - [2.3](#block-scoped-var) <a href="http://eslint.org/docs/rules/block-scoped-var">**block-scoped-var**</a>: Treat var as Block Scoped
   
   - [2.4](#complexity) **complexity**: Limit Cyclomatic Complexity
     > Cyclomatic complexity measures the number of linearly independent paths through a program’s source code. This rule allows setting a cyclomatic complexity threshold.
