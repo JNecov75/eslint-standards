@@ -9,14 +9,14 @@ This repo contains the ESLint file and explanations for the rule choices within.
 
 ## Global
   ```json
-    "env": {
-        "browser": true
-    },
-    "extends": "eslint:recommended",
-    "globals": {
-        "Ext": false,
-        "Atlas": false
-    }
+  "env": {
+    "browser": true
+  },
+  "extends": "eslint:recommended",
+  "globals": {
+    "Ext": false,
+    "Atlas": false
+  }
   ```
   - [1.1](#env) <a href="http://eslint.org/docs/user-guide/configuring#specifying-environments">**env**</a>: This object should contain only one property,`browser`. It should be set to true. This allows browser to be treated as a global variable.
   
@@ -34,67 +34,86 @@ This repo contains the ESLint file and explanations for the rule choices within.
     ```js
     // Bad
     var o = {
-        set a(value) {
-            this.val = value;
-        }
+      set a(value) {
+        this.val = value;
+      }
     };
 
     // Good
     var o = {
-        set a(value) {
-            this.val = value;
-        },
-        get a() {
-            return this.val;
-        }
+      set a(value) {
+        this.val = value;
+      },
+      get a() {
+        return this.val;
+      }
     };
     ```
     
   - [2.2](#array-callback-return) <a href="http://eslint.org/docs/rules/array-callback-return">**array-callback-return**</a>: Enforces return statements in callbacks of array’s methods
-    > `Array` has several methods for filtering, mapping, and folding. If we forget to write `return` statement in a callback of those, it’s probably a mistake.
-    > Incorrect code for this rule:
+    > `Array` has several methods for filtering, mapping, and folding. If we forget to write `return` statement in a callback of those, it’s probably a mistake. The callback functions affected are `from`, `every`, `filter`, `find`, `findIndex`, `map`, `reduce`, `reduceRight`, `some`, and `sort`. A limitation is that the rule checks callback functions that have any of the matched names, even if the object is not an array. Incorrect code for this rule:
     ```js
-    /*eslint array-callback-return: "error"*/
-
     var indexMap = myArray.reduce(function(memo, item, index) {
-        memo[item] = index;
+      memo[item] = index;
     }, {});
 
     var foo = Array.from(nodes, function(node) {
-        if (node.tagName === "DIV") {
-            return true;
-        }
+      if (node.tagName === "DIV") {
+        return true;
+      }
     });
 
     var bar = foo.filter(function(x) {
-        if (x) {
-            return true;
-        } else {
-            return;
-        }
+      if (x) {
+        return true;
+      } else {
+        return;
+      }
     });
     ```
     > Correct code for this rule:
     ```js
-    /*eslint array-callback-return: "error"*/
-
     var indexMap = myArray.reduce(function(memo, item, index) {
-        memo[item] = index;
-        return memo;
+      memo[item] = index;
+      return memo;
     }, {});
 
     var foo = Array.from(nodes, function(node) {
-        if (node.tagName === "DIV") {
-            return true;
-        }
-        return false;
+      if (node.tagName === "DIV") {
+        return true;
+      }
+      return false;
     });
 
     var bar = foo.map(node => node.getAttribute("id"));
     ```
     
   - [2.3](#block-scoped-var) <a href="http://eslint.org/docs/rules/block-scoped-var">**block-scoped-var**</a>: Treat var as Block Scoped
-  
+    >Emulating traditional block-scoped variables allows newer developers to avoid difficult bugs related to hoisting, without imposing much, if any, trouble for more experienced js developers. Incorrect code for this rule:
+    ```js
+    function doIf() {
+      if (true) {
+          var build = true;
+      }
+
+      console.log(build);
+    }
+
+    function doIfElse() {
+      if (true) {
+          var build = true;
+      } else {
+          var build = false;
+      }
+    }
+
+    function doTryCatch() {
+      try {
+          var build = 1;
+      } catch (e) {
+          var f = build;
+      }
+    }
   - [2.4](#complexity) **complexity**: Limit Cyclomatic Complexity
     > Cyclomatic complexity measures the number of linearly independent paths through a program’s source code. This rule allows setting a cyclomatic complexity threshold.
     ```js
