@@ -1,5 +1,5 @@
 # ESLint Rules and Javascript Coding Standards
-This repo contains the ESLint file and explanations for the rule choices within. This setup is geared towards javascript best practices, with Sencha ExtJS in mind, though the ruleset is pretty much universal. 
+This repo contains the ESLint file and explanations for the rule choices within. This setup is geared towards javascript best practices, with Sencha ExtJS in mind, though the ruleset is pretty much universal. All of the rules below are linked to their corresponding ESLint documentation page.
 
 ## Table of Contents
 1. [Global](#global)
@@ -50,11 +50,11 @@ This repo contains the ESLint file and explanations for the rule choices within.
     };
     ```
     
-  - [2.2](#array-callback-return) **array-callback-return**: Enforces return statements in callbacks of array’s methods
+  - [2.2](#array-callback-return) <a href="http://eslint.org/docs/rules/array-callback-return">**array-callback-return**</a>: Enforces return statements in callbacks of array’s methods
   
     > `Array` has several methods for filtering, mapping, and folding. If we forget to write `return` statement in a callback of those, it’s probably a mistake.
     
-  - [2.3](#block-scoped-var) **block-scoped-var**: Treat var as Block Scoped
+  - [2.3](#block-scoped-var) <a href="http://eslint.org/docs/rules/block-scoped-var">**block-scoped-var**: Treat var as Block Scoped
   
   - [2.4](#complexity) **complexity**: Limit Cyclomatic Complexity
     > Cyclomatic complexity measures the number of linearly independent paths through a program’s source code. This rule allows setting a cyclomatic complexity threshold.
