@@ -22,15 +22,14 @@ This repo contains the ESLint file and explanations for the rule choices within.
   
   - [1.2](#extends) <a href="http://eslint.org/docs/user-guide/configuring#extending-configuration-files">**extends**</a>: Use this property to set eslint:recommended. This setting automatically includes a set of recommended rules that ESLint has predetermined.
   
-  - [1.3](#globals) **globals**: Use this property to define the remaining global objects that your project needs. We created one for Ext due to framework requirements, and one that was the name of our project, Atlas, for project-specific data.
+  - [1.3](#globals) <a href="http://eslint.org/docs/user-guide/configuring#specifying-globals">**globals**</a>: Use this property to define the remaining global objects that your project needs. We created one for Ext due to framework requirements, and one that was the name of our project, Atlas, for project-specific data.
   
-  - [1.4](#rules) **rules**: This final object at the top level of the JSOn configuration file exists to house all of the necessary ESLint rules not included in the `eslint:recommended` property.
+  - [1.4](#rules) <a href="http://eslint.org/docs/rules/">**rules**</a>: This final object at the top level of the JSOn configuration file exists to house all of the necessary ESLint rules not included in the `eslint:recommended` property.
     
 ## Best Practices
-  - [2.1](#accessor-pairs) **accessor-pairs**: Enforces getter/setter pairs in objects
+  - [2.1](#accessor-pairs) <a href="http://eslint.org/docs/rules/accessor-pairs">**accessor-pairs**</a>: Enforces getter/setter pairs in objects
 
-    > http://eslint.org/docs/rules/accessor-pairs 
-    It’s a common mistake in JavaScript to create an object with just a setter for a property but never have a corresponding getter defined for it. Without a getter, you cannot read the property, so it ends up not being used.
+    > It’s a common mistake in JavaScript to create an object with just a setter for a property but never have a corresponding getter defined for it. Without a getter, you cannot read the property, so it ends up not being used.
 
     ```js
     // Bad
